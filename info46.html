@@ -157,35 +157,32 @@
         </div>
         <!----------------메인------------------------------>
         <div class="main">
-            <h1>서울특별시</h1>
+            <h1>전라남도</h1>
             <p>시,군,구를 선택해 주십시오
                 <select class="sigun" id="sigungu" onchange="handle(this)">
                     <option value="none">--선택--</option>
-                    <option value="680">강남구</option>
-                    <option value="740">강동구</option>
-                    <option value="305">강북구</option>
-                    <option value="500">강서구</option>
-                    <option value="620">관악구</option>
-                    <option value="215">광진구</option>
-                    <option value="530">구로구</option>
-                    <option value="545">금천구</option>
-                    <option value="350">노원구</option>
-                    <option value="320">도봉구</option>
-                    <option value="230">동대문구</option>
-                    <option value="590">동작구</option>
-                    <option value="440">마포구</option>
-                    <option value="410">서대문구</option>
-                    <option value="650">서초구</option>
-                    <option value="200">성동구</option>
-                    <option value="290">성북구</option>
-                    <option value="710">송파구</option>
-                    <option value="470">양천구</option>
-                    <option value="560">영등포구</option>
-                    <option value="170">용산구</option>
-                    <option value="380">은평구</option>
-                    <option value="110">종로구</option>
-                    <option value="140">중구</option>
-                    <option value="260">중랑구</option>
+                    <option value="810">강진군</option>
+                    <option value="770">고흥군</option>
+                    <option value="720">곡성군</option>
+                    <option value="230">광양시</option>
+                    <option value="730">구례군</option>
+                    <option value="170">나주시</option>
+                    <option value="710">담양군</option>
+                    <option value="110">목포시</option>
+                    <option value="840">무안군</option>
+                    <option value="780">보성군</option>
+                    <option value="150">순천시</option>
+                    <option value="910">신안군</option>
+                    <option value="130">여수시</option>
+                    <option value="870">영광군</option>
+                    <option value="830">영암군</option>
+                    <option value="890">완도군</option>
+                    <option value="880">장성군</option>
+                    <option value="800">장흥군</option>
+                    <option value="900">진도군</option>
+                    <option value="860">함평군</option>
+                    <option value="820">해남군</option>
+                    <option value="790">화순군</option>
                 </select>
                 <button>탐색</button>
             <div className="result" id="result"></div>
@@ -225,7 +222,7 @@
                     $.ajax({
                         method: "GET",
                         url: "http://apis.data.go.kr/B552061/frequentzoneLg/getRestFrequentzoneLg?ServiceKey=4K4EfEjoaMuDe8yW3cjlpWFKgsmRbyoQYcVLKY8yzus7ORY1dfhBnPwc8ztMPuJKWRr1p%2BqgH9wM2nPq8jDO7A%3D%3D",
-                        data: {searchYearCd:2020, siDo:11, guGun:value.options[value.selectedIndex].value, numOfRows:20, pageNo:1, type:"json" }
+                        data: {searchYearCd:2020, siDo:46, guGun:value.options[value.selectedIndex].value, numOfRows:20, pageNo:1, type:"json" }
                     })
                         .done(function( msg ) {
                             //alert( "Data Saved: " + msg );

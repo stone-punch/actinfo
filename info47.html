@@ -157,35 +157,33 @@
         </div>
         <!----------------메인------------------------------>
         <div class="main">
-            <h1>서울특별시</h1>
+            <h1>경상북도</h1>
             <p>시,군,구를 선택해 주십시오
                 <select class="sigun" id="sigungu" onchange="handle(this)">
                     <option value="none">--선택--</option>
-                    <option value="680">강남구</option>
-                    <option value="740">강동구</option>
-                    <option value="305">강북구</option>
-                    <option value="500">강서구</option>
-                    <option value="620">관악구</option>
-                    <option value="215">광진구</option>
-                    <option value="530">구로구</option>
-                    <option value="545">금천구</option>
-                    <option value="350">노원구</option>
-                    <option value="320">도봉구</option>
-                    <option value="230">동대문구</option>
-                    <option value="590">동작구</option>
-                    <option value="440">마포구</option>
-                    <option value="410">서대문구</option>
-                    <option value="650">서초구</option>
-                    <option value="200">성동구</option>
-                    <option value="290">성북구</option>
-                    <option value="710">송파구</option>
-                    <option value="470">양천구</option>
-                    <option value="560">영등포구</option>
-                    <option value="170">용산구</option>
-                    <option value="380">은평구</option>
-                    <option value="110">종로구</option>
-                    <option value="140">중구</option>
-                    <option value="260">중랑구</option>
+                    <option value="290">경산시</option>
+                    <option value="130">경주시</option>
+                    <option value="830">고령군</option>
+                    <option value="190">구미시</option>
+                    <option value="720">군위군</option>
+                    <option value="150">김천시</option>
+                    <option value="280">문경시</option>
+                    <option value="920">봉화군</option>
+                    <option value="250">상주시</option>
+                    <option value="840">성주군</option>
+                    <option value="170">안동시</option>
+                    <option value="770">영덕군</option>
+                    <option value="760">영양군</option>
+                    <option value="210">영주시</option>
+                    <option value="230">영천시</option>
+                    <option value="900">예천군</option>
+                    <option value="940">울릉군</option>
+                    <option value="930">울진군</option>
+                    <option value="730">의성군</option>
+                    <option value="820">청도군</option>
+                    <option value="750">청송군</option>
+                    <option value="850">칠곡군</option>
+                    <option value="11">포항시</option>
                 </select>
                 <button>탐색</button>
             <div className="result" id="result"></div>
@@ -225,7 +223,7 @@
                     $.ajax({
                         method: "GET",
                         url: "http://apis.data.go.kr/B552061/frequentzoneLg/getRestFrequentzoneLg?ServiceKey=4K4EfEjoaMuDe8yW3cjlpWFKgsmRbyoQYcVLKY8yzus7ORY1dfhBnPwc8ztMPuJKWRr1p%2BqgH9wM2nPq8jDO7A%3D%3D",
-                        data: {searchYearCd:2020, siDo:11, guGun:value.options[value.selectedIndex].value, numOfRows:20, pageNo:1, type:"json" }
+                        data: {searchYearCd:2020, siDo:47, guGun:value.options[value.selectedIndex].value, numOfRows:20, pageNo:1, type:"json" }
                     })
                         .done(function( msg ) {
                             //alert( "Data Saved: " + msg );
