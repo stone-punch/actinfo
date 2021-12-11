@@ -104,7 +104,7 @@
                     //console.log(value.options[value.selectedIndex].value);
                     $.ajax({
                         method: "GET",
-                        url: "http://apis.data.go.kr/B552061/frequentzoneLg/getRestFrequentzoneLg?ServiceKey=4K4EfEjoaMuDe8yW3cjlpWFKgsmRbyoQYcVLKY8yzus7ORY1dfhBnPwc8ztMPuJKWRr1p%2BqgH9wM2nPq8jDO7A%3D%3D",
+                        url: "https://cors-anywhere.herokuapp.com/http://apis.data.go.kr/B552061/frequentzoneLg/getRestFrequentzoneLg?ServiceKey=4K4EfEjoaMuDe8yW3cjlpWFKgsmRbyoQYcVLKY8yzus7ORY1dfhBnPwc8ztMPuJKWRr1p%2BqgH9wM2nPq8jDO7A%3D%3D",
                         data: {searchYearCd:2020, siDo:47, guGun:value.options[value.selectedIndex].value, numOfRows:20, pageNo:1, type:"json" }
                     })
                         .done(function( msg ) {
