@@ -5,126 +5,7 @@
     <meta name="viewport" width="content_width">
     <title></title>
 
-  <style>
-
-    *{
-        padding: 0;
-        margin: 0;
-    }
-
-    .container{
-        display: grid;
-        grid-template-columns: repeat(6, 1fr);
-       /*grid-template-rows:  repeat(6, 1fr);*/
-        grid-template-rows: 150px 2000px 50px;
-        grid-gap: 10px;
-        justify-content: center;
-
-    }
-    .container .header{
-
-        grid-column-start: 1;
-        grid-column-end: 7;
-        grid-row-start: 1;
-        grid-row-end: 2;
-
-        text-align: center;
-        font-size: 1.3em;
-        border-bottom: 2px solid black;
-    }
-
-    .container .header h1{
-        margin-top: 50px;
-    }
-
-    .container .aside{
-
-        grid-column-start: 6;
-        grid-column-end: 7;
-        grid-row-start: 2;
-        grid-row-end: 3;
-
-        text-align: center;
-        border-left: 2px solid black;
-
-    }
-
-    .container .aside h3{
-        font-size: 30px;
-        border-bottom: 2px dotted black;
-    }
-
-    .container .aside ul{
-        margin-top: 5px;
-        list-style: none;
-    }
-
-    .container .aside ul li{
-        margin-top: 15px;
-        margin-left: 2px;
-        border: 1px solid black;
-    }
-
-    .container .aside ul li:hover{
-        background-color: gray;
-    }
-
-    .container .aside ul li a{
-        color: black;
-        font-weight: bold;
-        font-size: 20px;
-        text-decoration-line: none;
-    }
-
-    .container .main{
-        grid-column-start: 1;
-        grid-column-end: 6;
-        grid-row-start: 2;
-        grid-row-end: 3;
-
-    }
-
-    .container .main h1{
-        margin-left: 45%;
-        margin-top: 10px;
-        margin-bottom: 10px;
-    }
-
-    .container .main p{
-        margin-top: 10px;
-        margin-left: 35%;
-        font-size: 20px;
-        font-weight: bold;
-    }
-
-    .container .main select{
-        font-size: 20px;
-        margin-left: 5px;
-    }
-
-    .container .main button{
-        font-size: 20px;
-        margin-left: 5px;
-    }
-    .container .main button:hover{
-        font-size: 20px;
-        margin-left: 5px;
-        background-color: black;
-        color: white;
-    }
-
-    .container .footer{
-
-        grid-column-start: 1;
-        grid-column-end: 7;
-        grid-row-start: 3;
-        grid-row-end: 4;
-
-        border-top: 2px solid black;
-    }
-
-
-  </style>
+    <link rel="stylesheet" href="style.css">
 
 </head>
 <body>
@@ -180,7 +61,7 @@
             </script>
 
             <!-- 지도 표시 -->
-            <div id="map" style="width:80%;height:30%; margin-left:10%; margin-top:2%"></div>
+            <div id="map" style="width:80%;height:60%; margin-left:10%; margin-top:2%"></div>
             <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=4d806917ac0b970b0e779dbbfed5f430"></script>
 
 
@@ -225,6 +106,26 @@
                                 // 지도 중심을 이동 시킵니다
                                 map.setCenter(moveLatLon);
 
+
+                                // 마커에 표시할 인포윈도우를 생성합니다
+                                var infowindow = new kakao.maps.InfoWindow({
+                                    content: msg.items.item[i].spot_nm // 인포윈도우에 표시할 내용
+                                });
+
+                                kakao.maps.event.addListener(marker, 'mouseover', makeOverListener(map, marker, infowindow));
+                                kakao.maps.event.addListener(marker, 'mouseout', makeOutListener(infowindow));
+
+                            }
+
+                            function makeOverListener(map, marker, infowindow) {
+                                return function() {
+                                    infowindow.open(map, marker);
+                                };
+                            }
+                            function makeOutListener(infowindow) {
+                                return function() {
+                                    infowindow.close();
+                                };
                             }
                         });
                 }
